@@ -2,7 +2,7 @@
   "name": "api-with-express",
   "version": "1.0.0",
   "description": "Readme for Node api with express project. \r Rename Check",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "scripts": {
     "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
     "build": "tsc",
