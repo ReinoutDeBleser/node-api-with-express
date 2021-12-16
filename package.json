@@ -1,0 +1,20 @@
+{
+  "name": "api-with-express",
+  "version": "1.0.0",
+  "description": "Readme for Node api with express project. \r Rename Check",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ReinoutDeBleser/node-api-with-express.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ReinoutDeBleser/node-api-with-express/issues"
+  },
+  "homepage": "https://github.com/ReinoutDeBleser/node-api-with-express#readme"
+}
