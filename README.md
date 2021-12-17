@@ -68,11 +68,20 @@ Started in the afternoon after creating a nice Readme template for future use an
 - Understanding that routes need a separate folder. 
 - passing the user profile object < userinfo property < userContext object to the views as data to use. 
 - using partials in views to create a nav bar. 
-- Installing Docker
+- //day2 
+- Installing Docker 10:10 - 11:00
 - Using Docker to download the latest PostgreSQL container. named the container guitar-db
 - Note: If you restart your computer, may need to restart the Docker container. You can do that using the `docker start guitar-db` command.
 - Installing the PostgreSQL client module and type declarations 
 - adding a build script to initialize the PostgreSQL database. 
+- adding api routes to create, query, update and delete guitars. 
+- updating the src/routes/index.ts to include the new api module.
+- and configuring src/index.ts to parse incoming json data using `app.use( express.json() );`
+- 11:00 - : 
+- API is ready on to UI:
+- Installing and using Vue (for frontend rendering), Axios (for http-calls) and Parcel (for transpiling Ts  & bundling dependencies in a single Js file).
+- 
+- 
 
 
 
