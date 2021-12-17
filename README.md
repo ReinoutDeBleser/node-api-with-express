@@ -28,6 +28,7 @@ Quite a few steps involved but the article details them enormously better than I
 - Vue, Materialize, and Axios on the frontend, 
 - Okta for account registration and authorization, 
 - and finally TypeScript to govern the JavaScripts!
+- Understanding how a larger project is build from scratch and how to look at how the files are structured. 
  
 
 ## Strategy
@@ -42,25 +43,33 @@ If we get there I'll try and figure out what I could do with it that would be in
 
 Started in the afternoon after creating a nice Readme template for future use and finishing my previous project with Becode concerning SOLID
 14:00 - 17:00 : Trying to go through the described steps in the tutorial.  Ran into some issues I spent a lot of time on due to a rename of my github account. As usual, a simple restart of my machine ende up resolving said issue.  Not before I basically deleted the project and scrapped all my steps and started over though.  This was beneficial because up until that point I had not made a Github repository and this restart allowed me to very effectively log every single step involved in the project.  
+
 #### Day 2 : Friday 17/12/21
 
-9:00 - 9:30: Getting started again. Using Readme template to create readme. 
+09:00 - 10:10: Getting started again. Using Readme template to create readme. Detailing what I've done yesterday. 
+10:10 - 11:00: 
 
 ### Lessons learned
 
-Using Node.js to install Express (which is used to serve web pages and implement an API). 
-Dependencies are easily installed using npm.  
-After that I used node in similar fashion to install TypeScript for my project and added a tsconfig.json to my project for compilation (*transpilation*).  
-Therafter I installed tslint used for *linting* (=is a code analysis tool to alert you to potential problems in your code beyond syntax issues).  
-Using TypeScript declaration files from DefinitelyTyped ( found in opensource repo or original Js library).  
-Installing *Materialize* (=a modern CSS framework based on Google’s Material Design) using Embedded JavaScript Templates (EJS) also done through npm. 
-Adding a build script to the project for copying everything else apart from the JS files to the dist folder.   
-Achieved through installating of modules: ts-node, shelljs, fs-extra, rimraf, npm-run-all & nodemon.  
-Safe environment variable management through dotenv module.
-Easy authentication with Okta, after creating a free developer account , installing Okta CLI and enabling and saving Directory>Self-Service-Registration on the Okta Admin Console. 
-Configure Express to use the Okta OIDC middleware (*OIDC*=OpenId Connect).  
-This should make the Node.js application secure. 
-Understanding that routes need a separate folder. 
+- Using Node.js to install Express (which is used to serve web pages and implement an API). 
+- Dependencies are easily installed using npm.  
+- After that I used node in similar fashion to install TypeScript for my project and added a tsconfig.json to my project for compilation (*transpilation*).  
+- Therafter I installed tslint used for *linting* (=is a code analysis tool to alert you to potential problems in your code beyond syntax issues).  
+- Using TypeScript declaration files from DefinitelyTyped ( found in opensource repo or original Js library).  
+- Installing *Materialize* (=a modern CSS framework based on Google’s Material Design) using Embedded JavaScript Templates (EJS) also done through npm. 
+- Adding a build script to the project for copying everything else apart from the JS files to the dist folder.   
+- Achieved through installating of modules: ts-node, shelljs, fs-extra, rimraf, npm-run-all & nodemon.  
+- Safe environment variable management through dotenv module.
+- Easy authentication with Okta,  
+  - after creating a free developer account,  
+  - installing Okta CLI and enabling and saving Directory>Self-Service-Registration on the Okta Admin Console.  
+  - Configure Express to use the Okta OIDC middleware (*OIDC*=OpenId Connect).  
+- This should make the Node.js application secure. 
+- Understanding that routes need a separate folder. 
+- passing the user profile object < userinfo property < userContext object to the views as data to use. 
+- using partials in views to create a nav bar. 
+- Installing Docker
+- Using Docker to download the latest PostgreSQL container.
 
 
 
