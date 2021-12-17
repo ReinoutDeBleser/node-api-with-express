@@ -69,7 +69,10 @@ Started in the afternoon after creating a nice Readme template for future use an
 - passing the user profile object < userinfo property < userContext object to the views as data to use. 
 - using partials in views to create a nav bar. 
 - Installing Docker
-- Using Docker to download the latest PostgreSQL container.
+- Using Docker to download the latest PostgreSQL container. named the container guitar-db
+- Note: If you restart your computer, may need to restart the Docker container. You can do that using the `docker start guitar-db` command.
+- Installing the PostgreSQL client module and type declarations 
+- adding a build script to initialize the PostgreSQL database. 
 
 
 
