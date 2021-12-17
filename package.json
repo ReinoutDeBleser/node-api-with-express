@@ -4,6 +4,7 @@
   "description": "Readme for Node api with express project. \r Rename Check",
   "main": "dist/index.js",
   "scripts": {
+    "initdb": "ts-node tools/initdb",
     "clean": "rimraf dist/*",
     "copy-assets": "ts-node tools/copyAssets",
     "lint": "tslint -c tslint.json -p tsconfig.json --fix",
