@@ -24,7 +24,7 @@ new Vue( {
     },
     el: "#app",
     methods: {
-        addGuitar: function {
+        addGuitar(){
             const guitar = {
                 brand: this.brand,
                 color: this.color,
@@ -34,7 +34,9 @@ new Vue( {
             axios
                 .post( "/api/guitars/add", guitar )
                 .then( () => {
-                    this.$refs.year.focus();
+                    if (typeof this.$refs === "undefined") {
+                        this.$refs.year().focus();
+                    }
                     this.brand = "";
                     this.color = "";
                     this.model = "";
@@ -46,7 +48,7 @@ new Vue( {
                     console.log( err );
                 } );
         },
-        confirmDeleteGuitar: function ( id: string ) {
+        confirmDeleteGuitar(id: string ) {
             const guitar = this.guitars.find( ( g ) => g.id === id );
             this.selectedGuitar = `${ guitar.year } ${ guitar.brand } ${ guitar.model }`;
             this.selectedGuitarId = guitar.id;
@@ -54,7 +56,7 @@ new Vue( {
             const modal = M.Modal.init( dc );
             modal.open();
         },
-        deleteGuitar: function( id: string ) {
+        deleteGuitar(id: string ) {
             axios
                 .delete( `/api/guitars/remove/${ id }` )
                 .then( this.loadGuitars )

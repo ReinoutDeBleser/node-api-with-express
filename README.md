@@ -80,8 +80,8 @@ Started in the afternoon after creating a nice Readme template for future use an
 - 11:00 - : 
 - API is ready on to UI:
 - Installing and using Vue (for frontend rendering), Axios (for http-calls) and Parcel (for transpiling Ts  & bundling dependencies in a single Js file).
-- 
-- 
+- Am done with the instructions but it doesn't exactly end up looking like the expected result, spending some time reviewing my steps. @ 11:25
+- Apprears there are some dependency vulnerabilities will ask for input in how to troubleshoot, new to me. 
 
 
 

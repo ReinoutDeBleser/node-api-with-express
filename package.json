@@ -4,16 +4,20 @@
   "description": "Readme for Node api with express project. \r Rename Check",
   "main": "dist/index.js",
   "scripts": {
-    "initdb": "ts-node tools/initdb",
     "clean": "rimraf dist/*",
     "copy-assets": "ts-node tools/copyAssets",
     "lint": "tslint -c tslint.json -p tsconfig.json --fix",
     "tsc": "tsc",
+    "parcel": "parcel build src/public/js/main.ts -d dist/public/js",
     "build": "npm-run-all clean lint tsc copy-assets",
     "dev:start": "npm-run-all build start",
     "dev": "nodemon --watch src -e ts,ejs --exec npm run dev:start",
     "start": "node .",
+    "initdb": "ts-node tools/initdb",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "alias": {
+    "vue": "./node_modules/vue/dist/vue.common.js"
   },
   "repository": {
     "type": "git",
