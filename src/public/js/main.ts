@@ -15,7 +15,7 @@ new Vue( {
     data: {
         brand: "",
         color: "",
-        guitars: new Array(),
+        guitars: [],
         isLoading: true,
         model: "",
         selectedGuitar: "",
@@ -24,7 +24,7 @@ new Vue( {
     },
     el: "#app",
     methods: {
-        addGuitar(){
+        addGuitar() {
             const guitar = {
                 brand: this.brand,
                 color: this.color,
@@ -34,10 +34,8 @@ new Vue( {
             axios
                 .post( "/api/guitars/add", guitar )
                 .then( () => {
-                    if (typeof this.$refs !== "undefined") {
-                        // @ts-ignore
-                        this.$refs.year.focus();
-                    }
+                    // @ts-ignore
+                    this.$refs.year.focus();
                     this.brand = "";
                     this.color = "";
                     this.model = "";
@@ -50,19 +48,23 @@ new Vue( {
                     console.log( err );
                 } );
         },
-        confirmDeleteGuitar(id: string ) {
+        confirmDeleteGuitar ( id: string ) {
+            // @ts-ignore
             const guitar = this.guitars.find( ( g ) => g.id === id );
+            // @ts-ignore
             this.selectedGuitar = `${ guitar.year } ${ guitar.brand } ${ guitar.model }`;
+            // @ts-ignore
             this.selectedGuitarId = guitar.id;
             const dc = this.$refs.deleteConfirm;
-            const modal = M.Modal.init(dc as Element);
+            // @ts-ignore
+            const modal = M.Modal.init( dc );
             modal.open();
         },
-        deleteGuitar(id: string ) {
-            axios
+        deleteGuitar( id: string ) {
+                axios
                 .delete( `/api/guitars/remove/${ id }` )
                 // @ts-ignore
-                .then( this.loadGuitars )
+                .then( this.loadGuitars() )
                 .catch( ( err: any ) => {
                     // tslint:disable-next-line:no-console
                     console.log( err );

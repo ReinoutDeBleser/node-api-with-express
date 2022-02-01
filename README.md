@@ -53,6 +53,7 @@ Started in the afternoon after creating a nice Readme template for future use an
 
 09:00 - 10:00: Rekindling interest in this project as we're now in the summer pastures before I ran into some trouble and wasn't able to finish it last time due to some bug or error. 
 10:00 - 11:00: found a step where in the package.json script order gave a few unexpected results. visually everything seems to be working, now trying to fix the saving of the data to the database  
+11:00 - 12:30: running into a weird situation where if i change the script js/main.js  in the guitars.ejs file to js/main.ts that the visual gets mangled and the guitar isn't saved. 
 
 ### Lessons learned
 
@@ -86,7 +87,7 @@ Started in the afternoon after creating a nice Readme template for future use an
 - API is ready on to UI:
 - Installing and using Vue (for frontend rendering), Axios (for http-calls) and Parcel (for transpiling Ts  & bundling dependencies in a single Js file).
 - Am done with the instructions but it doesn't exactly end up looking like the expected result, spending some time reviewing my steps. @ 11:25
-- Apprears there are some dependency vulnerabilities will ask for input in how to troubleshoot, new to me. 
+- Appears there are some dependency vulnerabilities will ask for input in how to troubleshoot, new to me. 
 
 
 

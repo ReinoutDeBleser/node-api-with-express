@@ -50,7 +50,7 @@
     "@types/fs-extra": "^9.0.13",
     "@types/materialize-css": "^1.0.11",
     "@types/node": "^16.11.14",
-    "@types/pg": "^8.6.2",
+    "@types/pg": "^8.6.4",
     "@types/shelljs": "^0.8.9",
     "@types/vue": "^2.0.0",
     "fs-extra": "^10.0.0",

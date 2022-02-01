@@ -39,9 +39,9 @@ export const register = ( app: express.Application ) => {
         try {
             const userId = req.userContext.userinfo.sub;
             const total = await db.one( `
-            SELECT  count(*) AS total
-            FROM    guitars
-            WHERE   user_id = $[userId]`, { userId }, ( data: { total: number } ) => {
+                SELECT  count(*) AS total
+                FROM    guitars
+                WHERE   user_id = $[userId]`, { userId }, ( data: { total: number } ) => {
                 return {
                     total: +data.total
                 };
@@ -58,15 +58,15 @@ export const register = ( app: express.Application ) => {
         try {
             const userId = req.userContext.userinfo.sub;
             const guitars = await db.any( `
-                SELECT
-                    id
-                    , brand
-                    , model
-                    , year
-                    , color
-                FROM    guitars
-                WHERE   user_id = $[userId]
-                AND   ( brand ILIKE $[search] OR model ILIKE $[search] )`,
+                        SELECT
+                            id
+                             , brand
+                             , model
+                             , year
+                             , color
+                        FROM    guitars
+                        WHERE   user_id = $[userId]
+                          AND   ( brand ILIKE $[search] OR model ILIKE $[search] )`,
                 { userId, search: `%${ req.params.search }%` } );
             return res.json( guitars );
         } catch ( err ) {
@@ -80,9 +80,9 @@ export const register = ( app: express.Application ) => {
         try {
             const userId = req.userContext.userinfo.sub;
             const id = await db.one( `
-                INSERT INTO guitars( user_id, brand, model, year, color )
-                VALUES( $[userId], $[brand], $[model], $[year], $[color] )
-                RETURNING id;`,
+                        INSERT INTO guitars( user_id, brand, model, year, color )
+                        VALUES( $[userId], $[brand], $[model], $[year], $[color] )
+                            RETURNING id;`,
                 { userId, ...req.body  } );
             return res.json( { id } );
         } catch ( err ) {
@@ -96,15 +96,15 @@ export const register = ( app: express.Application ) => {
         try {
             const userId = req.userContext.userinfo.sub;
             const id = await db.one( `
-                UPDATE guitars
-                SET brand = $[brand]
-                    , model = $[model]
-                    , year = $[year]
-                    , color = $[color]
-                WHERE
-                    id = $[id]
-                    AND user_id = $[userId]
-                RETURNING
+                        UPDATE guitars
+                        SET brand = $[brand]
+                          , model = $[model]
+                          , year = $[year]
+                          , color = $[color]
+                        WHERE
+                            id = $[id]
+                          AND user_id = $[userId]
+                            RETURNING
                     id;`,
                 { userId, ...req.body  } );
             return res.json( { id } );
@@ -119,10 +119,10 @@ export const register = ( app: express.Application ) => {
         try {
             const userId = req.userContext.userinfo.sub;
             const id = await db.result( `
-                DELETE
-                FROM    guitars
-                WHERE   user_id = $[userId]
-                AND     id = $[id]`,
+                        DELETE
+                        FROM    guitars
+                        WHERE   user_id = $[userId]
+                          AND     id = $[id]`,
                 { userId, id: req.params.id  }, ( r ) => r.rowCount );
             return res.json( { id } );
         } catch ( err ) {
