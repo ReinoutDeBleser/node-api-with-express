@@ -1,6 +1,6 @@
 # Created by https://www.toptal.com/developers/gitignore/api/windows,phpstorm
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,phpstorm
-
+.cache
 .env
 .okta.env
 /node_modules

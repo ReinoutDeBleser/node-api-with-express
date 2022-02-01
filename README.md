@@ -49,6 +49,11 @@ Started in the afternoon after creating a nice Readme template for future use an
 09:00 - 10:10: Getting started again. Using Readme template to create readme. Detailing what I've done yesterday. 
 10:10 - 11:00: 
 
+#### Day 3: Tuesday 1/02/22
+
+09:00 - 10:00: Rekindling interest in this project as we're now in the summer pastures before I ran into some trouble and wasn't able to finish it last time due to some bug or error. 
+10:00 - 11:00: found a step where in the package.json script order gave a few unexpected results. visually everything seems to be working, now trying to fix the saving of the data to the database  
+
 ### Lessons learned
 
 - Using Node.js to install Express (which is used to serve web pages and implement an API). 

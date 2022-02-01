@@ -6,16 +6,16 @@ import Vue from "vue";
 new Vue( {
     computed: {
         hazGuitars(): boolean {
-            return this.isLoading === false && this.guitars.length > 0;
+            return !this.isLoading && this.guitars.length > 0;
         },
         noGuitars(): boolean {
-            return this.isLoading === false && this.guitars.length === 0;
+            return !this.isLoading && this.guitars.length === 0;
         }
     },
     data: {
         brand: "",
         color: "",
-        guitars: [],
+        guitars: new Array(),
         isLoading: true,
         model: "",
         selectedGuitar: "",
@@ -34,13 +34,15 @@ new Vue( {
             axios
                 .post( "/api/guitars/add", guitar )
                 .then( () => {
-                    if (typeof this.$refs === "undefined") {
-                        this.$refs.year().focus();
+                    if (typeof this.$refs !== "undefined") {
+                        // @ts-ignore
+                        this.$refs.year.focus();
                     }
                     this.brand = "";
                     this.color = "";
                     this.model = "";
                     this.year = "";
+                    // @ts-ignore
                     this.loadGuitars();
                 } )
                 .catch( ( err: any ) => {
@@ -53,19 +55,20 @@ new Vue( {
             this.selectedGuitar = `${ guitar.year } ${ guitar.brand } ${ guitar.model }`;
             this.selectedGuitarId = guitar.id;
             const dc = this.$refs.deleteConfirm;
-            const modal = M.Modal.init( dc );
+            const modal = M.Modal.init(dc as Element);
             modal.open();
         },
         deleteGuitar(id: string ) {
             axios
                 .delete( `/api/guitars/remove/${ id }` )
+                // @ts-ignore
                 .then( this.loadGuitars )
                 .catch( ( err: any ) => {
                     // tslint:disable-next-line:no-console
                     console.log( err );
                 } );
         },
-        loadGuitars: function() {
+        loadGuitars() {
             axios
                 .get( "/api/guitars/all" )
                 .then( ( res: any ) => {
@@ -78,7 +81,8 @@ new Vue( {
                 } );
         }
     },
-    mounted: function() {
+    mounted() {
+        // @ts-ignore
         return this.loadGuitars();
     }
 } );
