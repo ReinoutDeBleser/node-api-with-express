@@ -47,13 +47,19 @@ Started in the afternoon after creating a nice Readme template for future use an
 #### Day 2 : Friday 17/12/21
 
 09:00 - 10:10: Getting started again. Using Readme template to create readme. Detailing what I've done yesterday. 
-10:10 - 11:00: 
+10:10 - 11:00: running into issues but starting on something else for a bit
 
-#### Day 3: Tuesday 1/02/22
+#### Day 3: Tuesday 2/02/22
 
 09:00 - 10:00: Rekindling interest in this project as we're now in the summer pastures before I ran into some trouble and wasn't able to finish it last time due to some bug or error. 
 10:00 - 11:00: found a step where in the package.json script order gave a few unexpected results. visually everything seems to be working, now trying to fix the saving of the data to the database  
 11:00 - 12:30: running into a weird situation where if i change the script js/main.js  in the guitars.ejs file to js/main.ts that the visual gets mangled and the guitar isn't saved. 
+
+#### Day 4: Thursday 3/02/22
+
+9:55 - 10:30: going over the entire project trying to figure out where things went wrong currently the only issue is that the guitars aren't saved or deleted when respective submits are done. 
+10:30 -10:45: rebuilt the docker on a different port with a different layout than suggested in the CLI as i think because of update sit might have changed the syntax
+
 
 ### Lessons learned
 
